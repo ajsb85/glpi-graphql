@@ -1,0 +1,5 @@
+{
+    "require": {
+        "pjmd89/api-graphql": "^0.2.2"
+    }
+}

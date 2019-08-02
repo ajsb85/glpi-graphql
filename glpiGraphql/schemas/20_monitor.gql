@@ -1,0 +1,37 @@
+type monitor{
+    id: Int
+    entities_id: Int
+    name: String
+    date_mod: String
+    contact: String
+    contact_num: String
+    users_id_tech: Int
+    groups_id_tech: Int
+    comment: String
+    serial: String
+    otherserial: String
+    size: Int
+    have_micro: Int
+    have_speaker: Int
+    have_subd: Int
+    have_bnc: Int
+    have_dvi: Int
+    have_pivot: Int
+    have_hdmi: Int
+    have_displayport: Int
+    locations_id: Int
+    monitortypes_id: Int
+    monitormodels_id: Int
+    manufacturers_id: Int
+    is_global: Int
+    is_deleted: Int
+    is_template: Int
+    template_name: String
+    users_id: Int
+    groups_id: Int
+    states_id: Int
+    ticket_tco: Int
+    is_dynamic: Int
+    date_creation: String
+    is_recursive: Int
+}

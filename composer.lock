@@ -1,0 +1,172 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "5dbde36de3037892460602c5a76f3a48",
+    "packages": [
+        {
+            "name": "mongodb/mongodb",
+            "version": "1.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mongodb/mongo-php-library.git",
+                "reference": "bd148eab0493e38354e45e2cd7db59b90fdcad79"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mongodb/mongo-php-library/zipball/bd148eab0493e38354e45e2cd7db59b90fdcad79",
+                "reference": "bd148eab0493e38354e45e2cd7db59b90fdcad79",
+                "shasum": ""
+            },
+            "require": {
+                "ext-hash": "*",
+                "ext-json": "*",
+                "ext-mongodb": "^1.5.0",
+                "php": ">=5.5"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.36 || ^6.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "MongoDB\\": "src/"
+                },
+                "files": [
+                    "src/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Jeremy Mikola",
+                    "email": "jmikola@gmail.com"
+                },
+                {
+                    "name": "Derick Rethans",
+                    "email": "github@derickrethans.nl"
+                },
+                {
+                    "name": "Katherine Walker",
+                    "email": "katherine.walker@mongodb.com"
+                }
+            ],
+            "description": "MongoDB driver library",
+            "homepage": "https://jira.mongodb.org/browse/PHPLIB",
+            "keywords": [
+                "database",
+                "driver",
+                "mongodb",
+                "persistence"
+            ],
+            "time": "2018-07-18T14:33:41+00:00"
+        },
+        {
+            "name": "pjmd89/api-graphql",
+            "version": "v0.2.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pjmd89/api-graphql.git",
+                "reference": "ad59b793893722a390eefee8c91c88d5383eb34d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pjmd89/api-graphql/zipball/ad59b793893722a390eefee8c91c88d5383eb34d",
+                "reference": "ad59b793893722a390eefee8c91c88d5383eb34d",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "mongodb/mongodb": "1.4.2",
+                "php": "^7.1||^8.0",
+                "pjmd89/graphql-php": "1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "6.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "pjmd89\\apiGraphQL\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-only"
+            ],
+            "authors": [
+                {
+                    "name": "Pablo Muñoz",
+                    "email": "pjmd89@gmail.com"
+                }
+            ],
+            "description": "PHP API based on GraphQL",
+            "keywords": [
+                "api",
+                "graphql",
+                "php"
+            ],
+            "time": "2019-08-02T04:35:04+00:00"
+        },
+        {
+            "name": "pjmd89/graphql-php",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pjmd89/graphql-php.git",
+                "reference": "ea9c0de1019c8da1a31563b23b220fd09f2c917c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pjmd89/graphql-php/zipball/ea9c0de1019c8da1a31563b23b220fd09f2c917c",
+                "reference": "ea9c0de1019c8da1a31563b23b220fd09f2c917c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "php": "^7.1||^8.0"
+            },
+            "suggest": {
+                "psr/http-message": "To use standard GraphQL server",
+                "react/promise": "To leverage async resolving on React PHP platform"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "pjmd89\\GraphQL\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Fork modified for webonyx/graphql-php",
+            "homepage": "https://github.com/pjmd89/graphql-php",
+            "keywords": [
+                "api",
+                "graphql"
+            ],
+            "time": "2019-05-22T21:10:10+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

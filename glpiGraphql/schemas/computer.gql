@@ -1,0 +1,31 @@
+type computer{
+    id: Int
+    entities_id: Int
+    name: String
+    serial: String
+    otherserial: String
+    contact: String
+    contact_num: String
+    users_id_tech: Int
+    groups_id_tech: Int
+    comment: String
+    date_mod: String
+    autoupdatesystems_id: Int
+    locations_id: Int
+    domains_id: Int
+    networks_id: Int
+    computermodels_id: Int
+    computertypes_id: Int
+    is_template: Int
+    template_name: String
+    manufacturers_id: Int
+    is_deleted: Int
+    is_dynamic: Int
+    users_id: Int
+    groups_id: Int
+    states_id: Int
+    ticket_tco: Int
+    uuid: String
+    date_creation: String
+    is_recursive: Int
+}

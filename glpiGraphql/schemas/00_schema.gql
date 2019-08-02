@@ -1,0 +1,7 @@
+schema{
+    query:rootQuery
+}
+type rootQuery{
+    computers(id:Int):[computer]
+    monitors(id:Int):[monitor]
+}
