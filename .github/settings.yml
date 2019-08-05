@@ -1,3 +1,5 @@
+repository:
+  name: glpi-graphql
 labels:
   - name: bug
     color: f44336
