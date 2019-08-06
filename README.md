@@ -1,4 +1,4 @@
-# GLPIGraphQL GLPI plugin
+# GLPIGraphQL GLPI plugin.
 
 Add your plugin description here.
 
