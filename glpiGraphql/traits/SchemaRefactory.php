@@ -1,33 +1,34 @@
 <?php
 namespace glpiGraphql\Traits;
 
-trait SchemaRefactory{
+trait SchemaRefactory {
     private $_path;
     private $_fields = [];
-    private function _schemaInfo( Bool $createFile = true ){
-        $this->_path = '../'.pathinfo(str_replace('\\','/',__CLASS__))['dirname'];
-        if($createFile){
+
+    private function _schemaInfo(Bool $createFile = true) {
+        $this->_path = '../'.pathinfo(str_replace('\\', '/', __CLASS__))['dirname'];
+        if ($createFile) {
             $this->_getDBCollumnInfo();
             $this->_classPath();
         }
-        
     }
 
-    private function _getDBCollumnInfo(){
+    private function _getDBCollumnInfo() {
         global $DB;
-        $query = "SELECT COLUMN_NAME,DATA_TYPE FROM information_schema.columns WHERE table_name='".$this->_table."'";
+        $query = "SELECT COLUMN_NAME, DATA_TYPE FROM INFORMATION_SCHEMA.columns WHERE table_name='".$this->_table."'";
         $request = $DB->request($query);
-        $fields = [];
-        if(count($request) > 0){
-            foreach($request as $field){
-                switch($field['DATA_TYPE']){
+        if (count($request) > 0) {
+            foreach ($request as $field) {
+                switch ($field['DATA_TYPE']) {
                     case 'int':
                     case 'tinyint':
                     case 'bigint':
+                        $type = 'Int';
+                    break;
                     case 'decimal':
                     case 'float':
                     case 'double':
-                        $type = 'Int';
+                        $type = 'Float';
                     break;
                     case 'boolean':
                         $type = 'Boolean';
@@ -40,13 +41,12 @@ trait SchemaRefactory{
             }
         }
     }
-    private function _classPath(){
+
+    private function _classPath() {
         $schemaName = pathinfo($this->_path)['basename'];
-        $json = json_encode($this->_fields,JSON_PRETTY_PRINT);
-        $json = preg_replace('/"/','',$json);
-        $json = preg_replace('/,/','',$json);
-        file_put_contents(__DIR__.'/../schemas/'.$schemaName.'.gql','type '.$schemaName.$json);
+        $json = json_encode($this->_fields, JSON_PRETTY_PRINT);
+        $json = preg_replace('/"/', '', $json);
+        $json = preg_replace('/,/', '', $json);
+        file_put_contents(__DIR__.'/../schemas/'.$schemaName.'.gql', 'type '.$schemaName.$json);
     }
 }
-
-?>

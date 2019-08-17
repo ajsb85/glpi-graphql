@@ -1,14 +1,13 @@
 <?php
 session_start();
 require_once __DIR__.'/../vendor/autoload.php';
-//require_once __DIR__. '/../../../inc/dbmysql.class.php';
 
-
-define('GLPI_ROOT', __DIR__. '/../../../');
-include (GLPI_ROOT . "/inc/based_config.php");
-include_once (GLPI_ROOT . "/inc/define.php");
-require_once __DIR__. '/../../../config/config_db.php';
+define('GLPI_ROOT', __DIR__.'/../../../');
+include GLPI_ROOT.'inc/based_config.php';
+include_once GLPI_ROOT.'inc/define.php';
+require_once GLPI_ROOT.'config/config_db.php';
 $DB = new DB();
+
 use pjmd89\apiGraphQL\Api;
 use pjmd89\GraphQL\GraphQL;
 use pjmd89\GraphQL\Utils\BuildSchema;
@@ -28,7 +27,6 @@ try {
     $schema = BuildSchema::build($schemaString);
 
     if (count($_GET) == 0) {
-        //$_SESSION['defaultSite'] = setSite();
         $rawInput = file_get_contents('php://input');
         $input = json_decode($rawInput, true);
         $query = $input['query'] ?? null;
@@ -57,7 +55,7 @@ try {
 function setAllReferee() {
     $path = __DIR__.'/referee';
     $return = [];
-    if(file_exists($path)){
+    if (file_exists($path)) {
         $files = scandir($path);
         foreach ($files as $file) {
             $file = $path.'/'.$file;
@@ -70,21 +68,8 @@ function setAllReferee() {
             }
         }
     }
-    
 
     return $return;
-}
-
-function setSite() {
-    $sites = (new \api\components\site\Query())->sites([]);
-    $thisSite = array_search($_SERVER['SERVER_NAME'], array_column($sites, 'url'));
-
-    if ($thisSite === false) {
-        session_destroy();
-        throw new \api\helpers\Error('Forbidden');
-    }
-
-    return $sites[$thisSite]['_id']->__toString();
 }
 
 function getSchemas() {
@@ -102,4 +87,5 @@ function getSchemas() {
 }
 
 header('Content-Type: application/json; charset=UTF-8');
-echo json_encode($result);
+echo json_encode($result, JSON_PRETTY_PRINT);
+exit();
